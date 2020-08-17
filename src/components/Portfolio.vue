@@ -2,7 +2,7 @@
   <v-container>
     <v-row class="text-center">
       <v-col cols="12">
-       Home
+       Portfolio
       </v-col>
     </v-row>
   </v-container>
@@ -10,8 +10,7 @@
 
 <script>
   export default {
-    name: 'Home',
-
+    name: 'Portfolio',
     data: () => ({
 
     }),

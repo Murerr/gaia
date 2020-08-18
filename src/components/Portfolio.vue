@@ -1,18 +1,18 @@
 <template>
-  <v-container>
-    <v-row class="text-center">
-      <v-col cols="12">
-       Portfolio
-      </v-col>
-    </v-row>
-  </v-container>
+	<v-container>
+		<v-row class="text-center">
+			<v-col cols="12">
+				Portfolio
+			</v-col>
+		</v-row>
+	</v-container>
 </template>
 
 <script>
-  export default {
-    name: 'Portfolio',
-    data: () => ({
+	export default {
+		name: 'Portfolio',
+		data: () => ({
 
-    }),
-  }
+		}),
+	}
 </script>

@@ -20,7 +20,7 @@
 		<section id="about-me">
 			<div class="py-12"></div>
 				<v-container class="text-center">
-					<h2 class="display-2 font-weight-bold mb-3">ABOUT ME</h2>
+					<h2 class="display-2 font-weight-bold mb-3">Hi! I'm Rudy</h2>
 					<v-responsive class="mx-auto mb-8" width="56">
 						<v-divider class="mb-1"></v-divider>
 						<v-divider></v-divider>
@@ -29,26 +29,31 @@
 						<v-img src="https://media-exp1.licdn.com/dms/image/C5603AQGVyqblooz8vg/profile-displayphoto-shrink_200_200/0?e=1603324800&v=beta&t=UPbYVPG3GO4ZvkHxDRprEtzT5EMSjLl5BOiHU1eq2RA"></v-img>
 					</v-avatar>
 					<v-responsive class="mx-auto title font-weight-light mb-8" max-width="720">
-						Hi! I'm Rudy, welcome to my website! <br><br>
+						Welcome to my website! <br><br>
 						I have graduated with a Bachelor of Computing in France and I have been working in Ireland for more than 2 years now.
 						I always have been passionate about new technologies, particularly mobile and web development. <br>
 						You can have a quick look at my portfolio by clicking the link below !
 					</v-responsive>
-					<div></div>
-
-					<router-link class="porfolio-router-link" :to="{path: '/portfolio' }">
+					<router-link class="porfolio-router-link pb-8" :to="{path: '/portfolio' }">
 					<v-btn color="primary" href="https://vuetifyjs.com" outlined large>
 						<span class="primary--text font-weight-bold">
 							My portfolio
 						</span>
 					</v-btn>
 					</router-link>
-					<div></div>
-					<v-btn class="ma-4" fab outlined color="primary" @click="$vuetify.goTo('#contact-section')">
-						<v-icon>mdi-chevron-double-down</v-icon>
-					</v-btn>
+					<v-responsive class="mx-auto title font-weight-light mt-8" max-width="720">
+						You want to know more about me and my programming journey ? <br><br>
+					</v-responsive>
+
+					<router-link class="porfolio-router-link" :to="{path: '/portfolio' }">
+						<v-btn color="primary" href="https://vuetifyjs.com" outlined large>
+						<span class="primary--text font-weight-bold">
+							About Me
+						</span>
+						</v-btn>
+					</router-link>
+					<v-spacer></v-spacer>
 				</v-container>
-				<contact></contact>
 		</section>
 	</v-content>
 </template>
@@ -63,12 +68,10 @@
 </style>
 
 <script>
-	import Contact from "./Contact";
 	export default {
 		name: 'Home',
 		data: () => ({}),
 		components: {
-			Contact
 		},
 	}
 </script>

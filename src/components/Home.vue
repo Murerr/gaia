@@ -9,13 +9,8 @@
 								<span class="font-weight-light font-size" >RUDY MURER</span><br>
 								<span class="font-weight-black">SOFTWARE DEVELOPER</span>
 							</v-col>
-							<v-btn
-									class="align-self-end"
-									fab
-									outlined
-									color="white"
-									@click="$vuetify.goTo('#about-me')"
-							><v-icon>mdi-chevron-double-down</v-icon>
+							<v-btn class="align-self-end" fab outlined color="white" @click="$vuetify.goTo('#about-me')">
+								<v-icon>mdi-chevron-double-down</v-icon>
 							</v-btn>
 						</v-row>
 					</v-container>
@@ -49,13 +44,8 @@
 					</v-btn>
 					</router-link>
 					<div></div>
-					<v-btn
-							class="ma-4"
-							fab
-							outlined
-							color="primary"
-							@click="$vuetify.goTo('#contact-section')"
-					><v-icon>mdi-chevron-double-down</v-icon>
+					<v-btn class="ma-4" fab outlined color="primary" @click="$vuetify.goTo('#contact-section')">
+						<v-icon>mdi-chevron-double-down</v-icon>
 					</v-btn>
 				</v-container>
 				<contact></contact>

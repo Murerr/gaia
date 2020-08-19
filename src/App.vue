@@ -8,6 +8,8 @@
 				<router-link :to="{path: '/about' }"><v-btn text class="white--text">About</v-btn></router-link>
 			</v-container>
 			<v-spacer></v-spacer>
+			<a href="https://github.com/Murerr" target="_blank" ><v-btn icon><v-icon>mdi-github</v-icon></v-btn></a>
+			<a href="https://www.linkedin.com/in/murerr/" target="_blank" ><v-btn icon><v-icon>mdi-linkedin</v-icon></v-btn></a>
 		</v-app-bar>
 
 		<v-main class="pa-0">

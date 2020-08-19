@@ -42,7 +42,12 @@
 					</v-list-item-content>
 				</v-list-item>
 				<v-spacer></v-spacer>
-
+					<v-container align="center" justify="center">
+						<v-row justify="center">
+							<a class="pa-2 text-decoration-none" href="https://github.com/Murerr" target="_blank" ><v-icon size="40">mdi-github</v-icon></a>
+							<a class="pa-2 text-decoration-none" href="https://www.linkedin.com/in/murerr/" target="_blank" ><v-icon size="40">mdi-linkedin</v-icon></a>
+						</v-row>
+					</v-container>
 			</v-list>
 		</v-navigation-drawer>
 		<v-app-bar app color="primary" dark>

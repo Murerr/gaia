@@ -4,16 +4,20 @@
 			<div class="py-12"></div>
 			<v-container class="text-center">
 				<h2 class="display-2 font-weight-bold mb-3 text-uppercase">About Me</h2>
+
 				<v-responsive class="mx-auto mb-8" width="56">
 					<v-divider class="mb-1"></v-divider>
 					<v-divider></v-divider>
 				</v-responsive>
+
 				<v-avatar class="elevation-12 mb-12" size="128">
 					<v-img src="https://media-exp1.licdn.com/dms/image/C5603AQGVyqblooz8vg/profile-displayphoto-shrink_200_200/0?e=1603324800&v=beta&t=UPbYVPG3GO4ZvkHxDRprEtzT5EMSjLl5BOiHU1eq2RA"></v-img>
 				</v-avatar>
+
 				<v-responsive class="mx-auto title font-weight-light mb-8" max-width="720">
 					In this section you will find more about me, my skills and my journey <br>
 				</v-responsive>
+
 				<v-btn color="primary" href="#" outlined large>
 						<span class="primary--text font-weight-bold">
 							Download My CV
@@ -26,12 +30,8 @@
 							:key="i"
 							:color="item.color"
 							:icon="item.icon"
-							fill-dot
-					>
-						<v-card
-								:color="item.color"
-								dark
-						>
+							fill-dot>
+						<v-card :color="item.color" dark>
 							<v-card-title class="title">{{item.title}}</v-card-title>
 							<v-card-subtitle class="subtitle-1 text-left ">{{item.location}}</v-card-subtitle>
 							<v-card-text class="white text--secondary justify-center">
@@ -40,6 +40,7 @@
 								<v-btn v-if="item.youtube" color="red" icon><v-icon>mdi-youtube</v-icon></v-btn>
 							</v-card-text>
 						</v-card>
+
 						<template v-slot:opposite>
 							<span class="headline font-weight-bold text--secondary" v-text="item.year"></span>
 						</template>
@@ -98,7 +99,7 @@
 					color: 'red lighten-1',
 					icon: 'mdi-android',
 					github: '',
-					youtube: '',
+					youtube: 'https://youtu.be/b1QzD9aA2Ec',
 					title:'Android Internship',
 					location:'Cansii, Châteauneuf-sur-Isère, France',
 					text:'Developed a mobile application using Kotlin for MenuOnline web users. ' +
@@ -112,7 +113,7 @@
 					color: 'deep-orange lighten-2',
 					icon: 'mdi-printer-wireless',
 					github: '',
-					youtube: '',
+					youtube: 'https://youtu.be/Mo2wg_2_93U',
 					title:'Final Year Project: Reprography App',
 					location:'Université Grenoble Alpes, Valence, France',
 					text:'Established a web application that handle photocopies requests. The project was carried out using Symfony Framework (PHP). Learnt the importance of the Model View Controller.',

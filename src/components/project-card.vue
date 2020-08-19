@@ -6,9 +6,9 @@
 			<v-chip v-if="project.language" class="ma-2 text--primary" :color="getProjectColor(project.language)">{{project.language}}</v-chip>
 			<v-spacer></v-spacer>
 
-			<v-btn icon>
-				<v-icon>mdi-youtube</v-icon>
-			</v-btn>
+			<a v-if="getYoutubeLink(project.id)" class="card_actions" :href="getYoutubeLink(project.id)" target="_blank">
+				<v-btn icon><v-icon color="red">mdi-youtube</v-icon></v-btn>
+			</a>
 
 			<a class="card_actions" :href="project.html_url" target="_blank">
 				<v-btn icon><v-icon>mdi-github</v-icon></v-btn>
@@ -47,7 +47,15 @@
 					case "Vue" : return "#2c3e50";
 					default: return "primary";
 				}
+			},
+			getYoutubeLink(projectID){
+				switch (projectID) {
+					case 288771330 : return "https://youtu.be/mjGoD80olBE"; // Inaturalist
+					case 162812782 : return "https://youtu.be/11itQ0yDuRc"; // Teamwork API
+					default : return null
+				}
 			}
+
 		},
 		created() {
 

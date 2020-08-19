@@ -57,6 +57,10 @@
 		data: () => ({
 			projects: [],
 			forked_projects: [],
+			youtube_link : [
+				{id:288771330, link:"https://youtu.be/mjGoD80olBE", name:"Inaturalist"},
+				{id:162812782, link:"https://youtu.be/11itQ0yDuRc", name:"TeamWork API"},
+			],
 			loading : false
 		}),
 		methods: {
@@ -67,7 +71,7 @@
 				this.projects = response.data;
 				this.projects.sort((a, b) => { return new Date(b.created_at) - new Date(a.created_at) });
 				this.forked_projects = this.projects.filter(project => project.fork === true);
-				this.forked_projects.forEach(fork => this.projects.splice(this.projects.findIndex(project => project.name === fork.name),1));
+				this.forked_projects.forEach(fork => this.projects.splice(this.projects.findIndex(project => project.id === fork.id),1));
 
 				console.log(this.projects);
 				console.log(this.forked_projects);

@@ -28,12 +28,15 @@
 					<v-avatar class="elevation-12 mb-12" size="128">
 						<v-img src="./../assets/rudy_avatar.jpeg"></v-img>
 					</v-avatar>
-
-					<v-responsive class="mx-auto title font-weight-light mb-8" max-width="720">
-						Welcome to my website! <br><br>
-						I have graduated with a Bachelor of Computing in France and I have been working in Ireland for more than 2 years now.
-						I always have been passionate about new technologies, particularly mobile and web development. <br>
-						You can have a quick look at my portfolio by clicking the link below !
+					<v-responsive class="mx-auto title font-weight-light mb-8 text-center" max-width="720">
+						Welcome to my website!
+					</v-responsive>
+					<v-responsive class="mx-auto title font-weight-light text-justify" max-width="720">
+						22 years old Frenchman, I have graduated with a Bachelor of Computing and I have been working in Ireland for more than 2 years now.
+						I always have been passionate about new technologies, particularly mobile and web development. More recently, I have been interested about AI centered around tabletop games.<br><br>
+					</v-responsive>
+					<v-responsive class="mx-auto title font-weight-light mb-8 text-center" max-width="720">
+						You can have a look at the projects I'm working on by looking at my portfolio !
 					</v-responsive>
 					<router-link class="porfolio-router-link pb-8" :to="{path: '/portfolio' }">
 					<v-btn color="primary" href="https://vuetifyjs.com" outlined large>
@@ -42,8 +45,8 @@
 						</span>
 					</v-btn>
 					</router-link>
-					<v-responsive class="mx-auto title font-weight-light mt-8" max-width="720">
-						You want to know more about me and my programming journey ? <br><br>
+					<v-responsive class="mx-auto title font-weight-light mt-8 text-center" max-width="720">
+						Do you want to know more about me and my career ? <br><br>
 					</v-responsive>
 
 					<router-link class="porfolio-router-link" :to="{path: '/portfolio' }">

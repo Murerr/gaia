@@ -14,8 +14,9 @@
 					<v-img src="./../assets/rudy_avatar.jpeg"></v-img>
 				</v-avatar>
 
-				<v-responsive class="mx-auto title font-weight-light mb-8" max-width="720">
-					In this section you will find more about me, my skills and my journey <br>
+				<v-responsive class="mx-auto title font-weight-light mb-8 text-center" max-width="720">
+					In this section you will find more about me, my education and the project I have worked on so far !
+
 				</v-responsive>
 				<a @click.prevent="downloadCV()"><v-btn color="primary" outlined large>
 						<span class="primary--text font-weight-bold">

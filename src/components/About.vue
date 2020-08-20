@@ -11,18 +11,17 @@
 				</v-responsive>
 
 				<v-avatar class="elevation-12 mb-12" size="128">
-					<v-img src="https://media-exp1.licdn.com/dms/image/C5603AQGVyqblooz8vg/profile-displayphoto-shrink_200_200/0?e=1603324800&v=beta&t=UPbYVPG3GO4ZvkHxDRprEtzT5EMSjLl5BOiHU1eq2RA"></v-img>
+					<v-img src="./../assets/rudy_avatar.jpeg"></v-img>
 				</v-avatar>
 
 				<v-responsive class="mx-auto title font-weight-light mb-8" max-width="720">
 					In this section you will find more about me, my skills and my journey <br>
 				</v-responsive>
-
-				<v-btn color="primary" href="#" outlined large>
+				<a @click.prevent="downloadCV()"><v-btn color="primary" outlined large>
 						<span class="primary--text font-weight-bold">
 							Download My CV
 						</span>
-				</v-btn>
+				</v-btn></a>
 
 				<v-timeline align-top :dense="$vuetify.breakpoint.smAndDown">
 					<v-timeline-item
@@ -35,9 +34,11 @@
 							<v-card-title class="title">{{item.title}}</v-card-title>
 							<v-card-subtitle class="subtitle-1 text-left ">{{item.location}}</v-card-subtitle>
 							<v-card-text class="white text--secondary justify-center">
-								<p class="" >{{item.text}}</p>
-								<v-btn v-if="item.github" color="primary" icon><v-icon>mdi-github</v-icon></v-btn>
-								<v-btn v-if="item.youtube" color="red" icon><v-icon>mdi-youtube</v-icon></v-btn>
+								<ul class="text-center font-weight-medium pt-2"> {{item.text}}
+									<li class="text-left font-weight-regular" v-for="(item, index) in item.list" :key="index" > {{item}}</li>
+								</ul>
+								<a v-if="item.github" class="text-decoration-none" :href="item.github" target="_blank" ><v-btn color="primary" icon><v-icon>mdi-github</v-icon></v-btn></a>
+								<a v-if="item.youtube" class="text-decoration-none" :href="item.youtube" target="_blank" ><v-btn color="red" icon><v-icon>mdi-youtube</v-icon></v-btn></a>
 							</v-card-text>
 						</v-card>
 
@@ -53,9 +54,26 @@
 </template>
 
 <script>
+	import axios from 'axios';
 	export default {
 		name: 'About',
+		methods: {
+			downloadCV() {
+				let url = 'Rudy_Murer_CV_ENGLISH.pdf';
+				axios.get(this.publicPath + url , {responseType: 'blob'})
+					.then(response => {
+						const blob = new Blob([response.data], {type: 'application/pdf'});
+						const link = document.createElement('a');
+						link.href = URL.createObjectURL(blob);
+						link.download = 'Rudy_Murer_CV.pdf'; // Filename
+						link.click();
+						URL.revokeObjectURL(link.href)
+					}).catch(console.error)
+			}
+		},
 		data: () => ({
+
+			publicPath: process.env.BASE_URL,
 			items: [
 				{
 					color: 'red lighten-1',
@@ -64,23 +82,25 @@
 					youtube: '',
 					title:'Fullstack Software Developer',
 					location:'ASA Marketing, Cork, Ireland',
-					text:'Facilitated and hosted a Web application using Firebase. ' +
-						'Implemented a realtime fleet tracking system with Google Maps. ' +
-						'Designed and developed a UI to filter and sort artworks. ' +
-						'Learnt to prioritize my missions by using an issue tracking system.',
+					list: ['Facilitated and hosted a Web application using Firebase.',
+						'Implemented a realtime fleet tracking system with Google Maps.',
+						'Designed and developed a UI to filter and sort artworks.',
+						'Learnt to prioritize my missions by using an issue tracking system.'
+					],
 					year:'2019-Now'
 
 				},
 				{
 					color: 'deep-orange lighten-2',
 					icon: 'mdi-android',
-					github: '',
+					github: 'https://github.com/Murerr/CIT_transportAI',
 					youtube: '',
 					title:'Final Year Project : Transport AI',
 					location:'Cork Institute Of Technology, Cork, Ireland',
-					text:'Developed a mobile and web application to book the nearest self-driving car. ' +
-						'The data was stored and retrieved using Firebase. ' +
-						'Google Maps API was used to display user location.',
+					list:['Developed a mobile application to book the nearest self-driving car.',
+						'The data was stored and retrieved using Firebase.',
+						'Google Maps API was used to display user location.'
+					],
 					year:'2019'
 				},
 				{
@@ -90,8 +110,11 @@
 					youtube: '',
 					title:'BSc in Software Development',
 					location:'Cork Institute Of Technology, Cork, Ireland',
-					text:'Erasmus program, I took the Programming Mobile Device, Object Oriented Programming and Server-side Web Development core modules. ' +
-						'Agile Processes, Open Source Project and Cloud Networking were electives modules',
+					text:'1 Year Erasmus program, Core Modules:',
+					list:[ ' Programming Mobile Device & Object Oriented Programming',
+						'Server-side Web Development & Agile Processes',
+						'Open Source Project & Cloud Networking'
+					],
 					year:'2018-2019'
 
 				},
@@ -102,10 +125,12 @@
 					youtube: 'https://youtu.be/b1QzD9aA2Ec',
 					title:'Android Internship',
 					location:'Cansii, Châteauneuf-sur-Isère, France',
-					text:'Developed a mobile application using Kotlin for MenuOnline web users. ' +
-						'Used a RESTful API to synchronize data. ' +
-						'Retrieved data from the end-point with Retrofit. ' +
-						'Understood the importance of CI tools and Unit testing with Robotelectric. ',
+					text:'',
+					list:['Developed a mobile application using Kotlin for MenuOnline web users. ',
+						'Used a RESTful API to synchronize data. ',
+						'Retrieved data from the end-point with Retrofit. ',
+						'Understood the importance of CI tools and Unit testing with Robotelectric. '
+					],
 					year:'2018'
 
 				},
@@ -116,7 +141,11 @@
 					youtube: 'https://youtu.be/Mo2wg_2_93U',
 					title:'Final Year Project: Reprography App',
 					location:'Université Grenoble Alpes, Valence, France',
-					text:'Established a web application that handle photocopies requests. The project was carried out using Symfony Framework (PHP). Learnt the importance of the Model View Controller.',
+					text:'',
+					list:['Established a web application that handle photocopies requests.',
+						'The project was carried out using Symfony Framework (PHP).',
+						'Learnt the importance of the Model View Controller.'
+					],
 					year:'2018'
 				},
 				{
@@ -126,9 +155,11 @@
 					youtube: '',
 					title:'PHP Internship',
 					location:'8 Fablab, Crest, France',
-					text:'Created a client-side interface for customers to book a training session. ' +
-						'Carried out an administration panel to manage the bookings using Dolibarr ERP. ' +
+					text:'',
+					list:['Created a client-side interface for customers to book a training session. ',
+						'Carried out an administration panel to manage the bookings using Dolibarr',
 						'Billed customers using Stripe API.',
+					],
 					year:'2017'
 
 				},
@@ -139,8 +170,11 @@
 					youtube: '',
 					title:'DUT Informatique',
 					location:'Université Grenoble Alpes, Valence, France',
-					text:'A two year university Diploma in Computing: Learnt Web, Object-Oriented programming and mobile application development. Studied IT Project Management, Network Administration and OOP Design pattern',
-
+					text:'A two year university Diploma in Computing, Core Modules:',
+					list: ['Web Development & Object-Oriented programming',
+						'Object-Oriented programming and mobile application development',
+						'IT Project Management, Network Administration and OOP Design pattern'
+					],
 					year:'2015-2018'
 
 				},
@@ -151,7 +185,11 @@
 					youtube: '',
 					title:'Baccalauréat STI2D SIN',
 					location:'Lycée Des Catalins, Montélimar, France',
-					text:'Leaving Certificat equivalent with special emphasis on Programming & Engineering. Learnt C and Embedded programming',
+					text:'Leaving Certificat with special emphasis on Programming & Engineering.',
+					list:[
+						'C & Embedded programming',
+						'Arduino & Mechanical Engineering'
+					],
 					year:'2015'
 
 				}

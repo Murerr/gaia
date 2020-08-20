@@ -57,10 +57,6 @@
 		data: () => ({
 			projects: [],
 			forked_projects: [],
-			youtube_link : [
-				{id:288771330, link:"https://youtu.be/mjGoD80olBE", name:"Inaturalist"},
-				{id:162812782, link:"https://youtu.be/11itQ0yDuRc", name:"TeamWork API"},
-			],
 			loading : false
 		}),
 		methods: {

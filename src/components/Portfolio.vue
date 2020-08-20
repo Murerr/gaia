@@ -1,5 +1,5 @@
 <template>
-	<v-content>
+	<v-main>
 		<section id="portfolio">
 			<div class="py-12"></div>
 			<v-container class="text-center">
@@ -34,7 +34,7 @@
 				</v-col>
 			</v-row>
 		</section>
-	</v-content>
+	</v-main>
 </template>
 <style scoped>
 	.card_actions {

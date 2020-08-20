@@ -1,5 +1,5 @@
 <template>
-	<v-content>
+	<v-main>
 		<section id="about-me">
 			<div class="py-12"></div>
 			<v-container class="text-center">
@@ -15,7 +15,7 @@
 				</v-avatar>
 
 				<v-responsive class="mx-auto title font-weight-light mb-8 text-center" max-width="720">
-					In this section you will find more about me, my education and the project I have worked on so far !
+					In this section you will find more about me, my education and the projects I have worked on so far !
 
 				</v-responsive>
 				<a @click.prevent="downloadCV()"><v-btn color="primary" outlined large>
@@ -51,7 +51,7 @@
 
 			</v-container>
 		</section>
-	</v-content>
+	</v-main>
 </template>
 
 <script>

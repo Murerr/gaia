@@ -1,5 +1,5 @@
 <template>
-	<v-content>
+	<v-main>
 		<section id="hero">
 			<v-row no-gutters>
 				<v-img :min-height="'calc(100vh - ' + $vuetify.application.top + 'px)'" src="./../assets/background.jpeg">
@@ -59,7 +59,7 @@
 					<v-spacer></v-spacer>
 				</v-container>
 		</section>
-	</v-content>
+	</v-main>
 </template>
 
 <style scoped>

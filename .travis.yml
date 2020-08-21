@@ -5,6 +5,7 @@ cache: npm
 
 script: npm run lint && npm run build && git log --format=%B --no-merges -n 1
 
+before_deploy: COMMIT_MESSAGE = git log --format=%B --no-merges -n 1
 deploy:
   provider: firebase
   token: "1//07kmIJPTvEdfeCgYIARAAGAcSNwF-L9Ir_jIWFPUFDEjbyOFmYp2addFHKy1_dFkgsvmOfhtpLXaRV4Pn0bFll_Ow8xdVmQEE-EQ"
@@ -12,7 +13,7 @@ deploy:
   message: COMMIT_MESSAGE
   local_dir: dist
   on:
-    branch: master
+    branch: dev
 #after_deploy: git checkout master && git merge --no-ff $TRAVIS_PULL_REQUEST_BRANCH && git push origin master
 
 

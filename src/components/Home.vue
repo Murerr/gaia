@@ -33,7 +33,7 @@
 					</v-responsive>
 					<v-responsive class="mx-auto title font-weight-light text-justify" max-width="720">
 						22 years old Frenchman, I have graduated with a Bachelor of Computing and I have been working in Ireland for more than 2 years now.
-						I always have been passionate about new technologies, particularly mobile and web development. More recently, I have been interested about AI centered around tabletop games.<br><br>
+						I always have been passionate about new technologies, particularly mobile and web development. More recently, I have been interested in AI centered around tabletop games.<br><br>
 					</v-responsive>
 					<v-responsive class="mx-auto title font-weight-light mb-8 text-center" max-width="720">
 						You can have a look at the projects I'm working on by looking at my portfolio !

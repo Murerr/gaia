@@ -39,7 +39,7 @@
 						You can have a look at the projects I'm working on by looking at my portfolio !
 					</v-responsive>
 					<router-link class="porfolio-router-link pb-8" :to="{path: '/portfolio' }">
-					<v-btn color="primary" href="https://vuetifyjs.com" outlined large>
+					<v-btn color="primary" outlined large>
 						<span class="primary--text font-weight-bold">
 							My portfolio
 						</span>
@@ -50,7 +50,7 @@
 					</v-responsive>
 
 					<router-link class="porfolio-router-link" :to="{path: '/portfolio' }">
-						<v-btn color="primary" href="https://vuetifyjs.com" outlined large>
+						<v-btn color="primary" outlined large>
 						<span class="primary--text font-weight-bold">
 							About Me
 						</span>

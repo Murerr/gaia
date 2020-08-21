@@ -4,11 +4,11 @@ node_js:
 
 cache: npm
 
-script: npm run lint && npm run build && echo $FIREBASE_TOKEN
+script: npm run lint && npm run build
 
 deploy:
   provider: firebase
-  token: $FIREBASE_TOKEN
+  token: "1//07kmIJPTvEdfeCgYIARAAGAcSNwF-L9Ir_jIWFPUFDEjbyOFmYp2addFHKy1_dFkgsvmOfhtpLXaRV4Pn0bFll_Ow8xdVmQEE-EQ"
   skip_cleanup: true
   message: git log --format=%B --no-merges -n 1
   local_dir: dist

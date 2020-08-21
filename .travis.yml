@@ -9,7 +9,7 @@ deploy:
   provider: firebase
   token: "1//07kmIJPTvEdfeCgYIARAAGAcSNwF-L9Ir_jIWFPUFDEjbyOFmYp2addFHKy1_dFkgsvmOfhtpLXaRV4Pn0bFll_Ow8xdVmQEE-EQ"
   skip_cleanup: true
-  message: $TRAVIS_COMMIT $TRAVIS_COMMIT_RANGE $TRAVIS_JOB_WEB_URL
+  message: $TRAVIS_PULL_REQUEST $TRAVIS_BUILD_NUMBER $TRAVIS_JOB_WEB_URL
   local_dir: dist
   on:
     branch: dev

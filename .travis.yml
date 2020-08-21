@@ -5,7 +5,6 @@ cache: npm
 
 script: npm run lint && npm run build
 
-before_deploy: COMMIT_MESSAGE = git log --format=%B --no-merges -n 1
 deploy:
   provider: firebase
   token: "1//07kmIJPTvEdfeCgYIARAAGAcSNwF-L9Ir_jIWFPUFDEjbyOFmYp2addFHKy1_dFkgsvmOfhtpLXaRV4Pn0bFll_Ow8xdVmQEE-EQ"

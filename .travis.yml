@@ -4,12 +4,12 @@ node_js:
 
 cache: npm
 
-script: npm run lint && npm run build
+script: npm run lint && npm run build && echo $FIREBASE_TOKEN
 
 deploy:
   provider: firebase
   token:
-    secure: $FIREBASE_TOKEN
+    secure: "$FIREBASE_TOKEN"
   skip_cleanup: true
   message: git log --format=%B --no-merges -n 1
   local_dir: dist

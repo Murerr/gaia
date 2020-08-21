@@ -49,7 +49,7 @@
 						Do you want to know more about me and my career ? <br><br>
 					</v-responsive>
 
-					<router-link class="porfolio-router-link" :to="{path: '/portfolio' }">
+					<router-link class="porfolio-router-link" :to="{path: '/about' }">
 						<v-btn color="primary" outlined large>
 						<span class="primary--text font-weight-bold">
 							About Me

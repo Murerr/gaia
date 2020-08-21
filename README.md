@@ -1,4 +1,5 @@
 # gaia
+[![Build Status](https://travis-ci.com/Murerr/gaia.svg?branch=master)](https://travis-ci.com/Murerr/gaia)
 
 ## Project setup
 ```

@@ -10,7 +10,7 @@ deploy:
   provider: firebase
   token: "1//07kmIJPTvEdfeCgYIARAAGAcSNwF-L9Ir_jIWFPUFDEjbyOFmYp2addFHKy1_dFkgsvmOfhtpLXaRV4Pn0bFll_Ow8xdVmQEE-EQ"
   skip_cleanup: true
-  message: "git log --format=%B --no-merges -n 1"
+  message: $TRAVIS_COMMIT_MESSAGE
   local_dir: dist
   on:
     branch: dev

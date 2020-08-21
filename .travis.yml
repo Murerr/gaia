@@ -1,11 +1,9 @@
 language: node_js
 node_js:
   - "node"
-env:
-  - COMMIT_MESSAGE = git log --format=%B --no-merges -n 1
 cache: npm
 
-script: echo COMMIT_MESSAGE && echo $COMMIT_MESSAGE && npm run lint && npm run build
+script: npm run lint && npm run build && git log --format=%B --no-merges -n 1
 
 deploy:
   provider: firebase

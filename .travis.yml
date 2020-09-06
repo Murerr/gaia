@@ -6,10 +6,8 @@ cache: npm
 before_script: npm ci && npm install firebase-tools -g
 jobs:
   include:
-    - stage: lint
-      script: npm run lint
-    - stage: build
-      script: npm run build
+    - stage: lint & build
+      script: npm run lint && npm run build
     - stage: deploy
-      script: npm install firebase-tools -g && firebase deploy --only functions --token $FIREBASE_TOKEN
+      script: npm run lint && npm run build && npm install firebase-tools -g && firebase deploy --only functions --token $FIREBASE_TOKEN
       if: branch = master

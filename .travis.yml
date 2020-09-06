@@ -1,14 +1,15 @@
 language: node_js
 node_js:
-- node
+  - node
 cache: npm
-script: npm run lint npm run build
-deploy:
-  provider: firebase
-  token:
-    secure: bx6/a/uO4JMIJM6mlM+kUpGYzF//j7AhvO6klCD988KElMN5V2jFtAcCUGBxnLcDYO7UtGhS/eB7cpRxgYbzZ+CpV8cGjElhJopYN8G6HoJV/a9IcU6Cg8mvaeOl8IMXb4FUcgQ2Kkp3ymEbjjc635JLdYO4657hN2GPgxLnPsAxEz8mGpF+3TjItrgCqkJhBIgcNDDkjZgpMy7W6Y8eA8cv7WyxW4so6894HGV8hK4IZZBcVoY4OoNEPOK7x0q5sGnXm203rB0J7Shb95pb6J6QGwP92R9zFToZNPT8FgA2q0jZ7U22NzKKBWMVdU45n1GRx5t1a1ujGbOQC570ScPKAbCHEPEcFl/EvAt8e0kIn4wc2raFZ2vW4s2Bsb1qpZmrO3Wpe+d1PSJDSMX5hq2Rj913YuLLqj8aXP/50yjlvzZ7TSlHFEOYnBAckceAKhs5oa/hTtrabz3/opcaNeAEgtyiox/XyzwK4CagTiJGkqxjzzkgTTevDA8lKfZCOG92TozB1d1EhmLpQHic0n8uqr1O/k4VmJyPWRHksiux3SjEURAJrgN8q5Hj/BUeCFun13GR+OkZhDj2ovmvFkqSqxmMAyO122rd5a+IOmNhW6gbHAC+x/uuxPda7NtsFUJE9yjJDDt49BI/I5roqzstS48kCvWqxldm40Eeo6M=
-  skip_cleanup: true
-  message: "$TRAVIS_PULL_REQUEST_BRANCH $TRAVIS_JOB_WEB_URL"
-  local_dir: dist
-  on:
-    branch: master
+
+before_script: npm ci && npm install firebase-tools -g
+jobs:
+  include:
+    - stage: lint
+      script: npm run lint
+    - stage: build
+      script: npm run build
+    - stage: deploy
+      script: npm install firebase-tools -g && firebase deploy --only functions --token $FIREBASE_TOKEN
+      if: branch = master

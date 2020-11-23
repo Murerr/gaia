@@ -68,11 +68,7 @@
 				this.projects.sort((a, b) => { return new Date(b.created_at) - new Date(a.created_at) });
 				this.forked_projects = this.projects.filter(project => project.fork === true);
 				this.forked_projects.forEach(fork => this.projects.splice(this.projects.findIndex(project => project.id === fork.id),1));
-
-				console.log(this.projects);
-				console.log(this.forked_projects);
 				this.loading = true
-
 			});
 		}
 	}

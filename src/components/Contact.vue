@@ -96,7 +96,6 @@
 					contentType: false, // auto-detection
 					processData: false // no need to parse formData to string
 				}).then(result => {
-					console.log(result);
 					if (result && result.status === 200) {
 						this.$refs.form.reset();
 						this.toggleSnackbar(true)

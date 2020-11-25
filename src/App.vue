@@ -44,6 +44,8 @@
 				<v-spacer></v-spacer>
 					<v-container align="center" justify="center">
 						<v-row justify="center">
+							<a v-if="is_lang_english" class="pa-2 text-decoration-none" target="_blank" ><v-img max-height="40" max-width="40" src="./assets/united-kingdom.svg"></v-img></a>
+							<a v-else class="pa-2 text-decoration-none" target="_blank" ><v-img max-height="40" max-width="40" src="./assets/france.svg"></v-img></a>
 							<a class="pa-2 text-decoration-none" href="https://github.com/Murerr" target="_blank" ><v-icon size="40">mdi-github</v-icon></a>
 							<a class="pa-2 text-decoration-none" href="https://www.linkedin.com/in/murerr/" target="_blank" ><v-icon size="40">mdi-linkedin</v-icon></a>
 						</v-row>
@@ -58,6 +60,8 @@
 				<router-link :to="{path: '/about' }"><v-btn text class="white--text">About</v-btn></router-link>
 			</v-container>
 			<v-spacer></v-spacer>
+      <a v-if="is_lang_english" class="hidden-xs-only" ><v-btn icon><v-img max-height="24" max-width="24" src="./assets/united-kingdom.svg"></v-img></v-btn></a>
+      <a v-else class="hidden-xs-only" ><v-btn icon><v-img max-height="24" max-width="24" src="./assets/france.svg"></v-img></v-btn></a>
 			<a class="hidden-xs-only" href="https://github.com/Murerr" target="_blank" ><v-btn icon><v-icon>mdi-github</v-icon></v-btn></a>
 			<a class="hidden-xs-only" href="https://www.linkedin.com/in/murerr/" target="_blank" ><v-btn icon><v-icon>mdi-linkedin</v-icon></v-btn></a>
 			<v-app-bar-nav-icon class="hidden-sm-and-up" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
@@ -79,7 +83,6 @@
 <script>
 	export default {
 		name: 'App',
-
 		components: {
 
 		},
@@ -98,10 +101,14 @@
 						return false;
 					default : return false
 				}
-			}
+			},
+      is_lang_english() {
+        return /^en\b/.test(navigator.language);
+      }
 		},
 		data: () => ({
-			drawer: null
+			drawer: null,
+      lang: navigator.language
 		}),
 	};
 </script>

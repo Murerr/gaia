@@ -1,7 +1,7 @@
 <template>
 	<v-card width="350" height="160" class="mx-auto pa-2 ma-2">
 		<v-card-title class="one-line" v-text="project.name"></v-card-title>
-		<v-card-subtitle v-text="project.description"></v-card-subtitle>
+		<v-card-subtitle class="card_subtitles" v-text="project.description"></v-card-subtitle>
 		<v-card-actions>
 			<v-chip v-if="project.language" class="ma-2 text--primary" :color="getProjectColor(project.language)">{{project.language}}</v-chip>
 			<v-spacer></v-spacer>
@@ -25,6 +25,9 @@
 		text-overflow: ellipsis;
 		white-space: nowrap;
 	}
+  .card_subtitles{
+    max-height: 38px;
+  }
 </style>
 <script>
 	export default {

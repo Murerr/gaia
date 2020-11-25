@@ -6,8 +6,8 @@
 					<v-container fill-height>
 						<v-row align="center" class="white--text mx-auto" justify="center">
 							<v-col class="white--text text-center hero-header" cols="12" tag="h1">
-								<span class="font-weight-light font-size" >RUDY MURER</span><br>
-								<span class="font-weight-black">SOFTWARE DEVELOPER</span>
+								<span class="font-weight-light font-size" >RUDY MURER </span><br>
+								<span class="font-weight-black text-uppercase">{{ $t('home.software-developer') }}</span>
 							</v-col>
 							<v-btn class="align-self-end" fab outlined color="white" @click="$vuetify.goTo('#about-me')">
 								<v-icon>mdi-chevron-double-down</v-icon>

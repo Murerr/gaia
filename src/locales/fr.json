@@ -1,0 +1,11 @@
+{
+  "home": {
+    "software-developer": "Développeur Informatique"
+  },
+  "navbar": {
+    "home": "Accueil",
+    "portfolio": "Portfolio",
+    "contact": "Contact",
+    "about": "à Propos"
+  }
+}

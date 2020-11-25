@@ -54,14 +54,14 @@
 		</v-navigation-drawer>
 		<v-app-bar app color="primary" dark>
 			<v-container class="hidden-xs-only white--text" fluid>
-				<router-link :to="{path: '/' }"><v-btn text class="white--text">Home</v-btn></router-link>
-				<router-link :to="{path: '/portfolio' }"><v-btn text class="white--text">Portfolio</v-btn></router-link>
-				<router-link :to="{path: '/contact' }"><v-btn text class="white--text">Contact</v-btn></router-link>
-				<router-link :to="{path: '/about' }"><v-btn text class="white--text">About</v-btn></router-link>
+				<router-link :to="{path: '/' }"><v-btn text class="white--text">{{ $t('navbar.home') }}</v-btn></router-link>
+				<router-link :to="{path: '/portfolio' }"><v-btn text class="white--text">{{ $t('navbar.portfolio') }}</v-btn></router-link>
+				<router-link :to="{path: '/contact' }"><v-btn text class="white--text">{{ $t('navbar.contact') }}</v-btn></router-link>
+				<router-link :to="{path: '/about' }"><v-btn text class="white--text">{{ $t('navbar.about') }}</v-btn></router-link>
 			</v-container>
 			<v-spacer></v-spacer>
-      <a v-if="is_lang_english" class="hidden-xs-only" ><v-btn icon><v-img max-height="24" max-width="24" src="./assets/united-kingdom.svg"></v-img></v-btn></a>
-      <a v-else class="hidden-xs-only" ><v-btn icon><v-img max-height="24" max-width="24" src="./assets/france.svg"></v-img></v-btn></a>
+      <a @click="updateLang('en')" v-if="is_lang_french" class="hidden-xs-only" ><v-btn icon><v-img max-height="24" max-width="24" src="./assets/united-kingdom.svg"></v-img></v-btn></a>
+      <a @click="updateLang('fr')" v-else class="hidden-xs-only color" ><v-btn icon><v-img max-height="24" max-width="24" src="./assets/france.svg"></v-img></v-btn></a>
 			<a class="hidden-xs-only" href="https://github.com/Murerr" target="_blank" ><v-btn icon><v-icon>mdi-github</v-icon></v-btn></a>
 			<a class="hidden-xs-only" href="https://www.linkedin.com/in/murerr/" target="_blank" ><v-btn icon><v-icon>mdi-linkedin</v-icon></v-btn></a>
 			<v-app-bar-nav-icon class="hidden-sm-and-up" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
@@ -78,7 +78,9 @@
 	</v-app>
 </template>
 <style scoped>
-
+.v-application a {
+  color: transparent;
+}
 </style>
 <script>
 	export default {
@@ -102,13 +104,17 @@
 					default : return false
 				}
 			},
-      is_lang_english() {
-        return /^en\b/.test(navigator.language);
+      is_lang_french() {
+        return /^fr\b/.test(navigator.language) || this.$root.$i18n.locale === 'fr';
       }
 		},
+    methods:{
+      updateLang(lang){
+        this.$root.$i18n.locale = lang;
+      }
+    },
 		data: () => ({
 			drawer: null,
-      lang: navigator.language
 		}),
 	};
 </script>

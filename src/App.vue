@@ -70,17 +70,17 @@
 		<v-main class="pa-0">
 			<router-view></router-view>
 		</v-main>
-		<v-footer class="justify-center mt-2" color="primary">
-      <div class=" title font-weight-light white--text text--lighten-1 text-center">
+		<v-footer class="justify-center mt-2" align="center" justify="center" color="primary">
+      <div class=" title font-weight-light white--text text--lighten-1">
         {{ $t('app.available') }}
       </div>
-      <v-container align="center" justify="center" class="pa-0">
-        <v-row justify="center">
+      <v-container class="pa-0" >
+        <v-row align="center" justify="center">
           <a @click="updateLang('en')" v-if="is_lang_french" class="text-decoration-none" target="_blank" ><v-img max-height="32" max-width="32" src="./assets/united-kingdom.svg"></v-img></a>
           <a @click="updateLang('fr')" v-else class="text-decoration-none" target="_blank" ><v-img max-height="32" max-width="32" src="./assets/france.svg"></v-img></a>
         </v-row>
       </v-container>
-			<div class="title font-weight-light white--text text--lighten-1 text-center">
+			<div class="title font-weight-light white--text text--lighten-1">
 				&copy; {{ (new Date()).getFullYear() }}  {{ $t('app.madeby') }}
 			</div>
 		</v-footer>

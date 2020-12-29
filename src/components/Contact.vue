@@ -2,9 +2,9 @@
 	<v-main>
 		<section id="contact-section">
 			<v-sheet id="contact" color="white" tag="section" tile>
-				<div class="py-12"></div>
+				<div class="py-6"></div>
 				<v-container>
-					<h2 class="display-2 font-weight-bold mb-3 text-uppercase text-center">Contact Me</h2>
+					<h2 class="display-2 font-weight-bold mb-3 text-uppercase text-center">{{ $t('contact.title') }}</h2>
 					<v-responsive class="mx-auto mb-12" width="56">
 						<v-divider class="mb-1"></v-divider>
 						<v-divider></v-divider>
@@ -13,23 +13,23 @@
 						<v-progress-linear v-if="loading" indeterminate color="secondary"></v-progress-linear>
 						<v-row>
 							<v-col cols="12">
-								<v-text-field required :rules="nameRules" v-model="name" flat label="Name*" outlined color="primary"></v-text-field>
+								<v-text-field required :rules="nameRules" v-model="name" flat :label="$t('contact.name')" outlined color="primary"></v-text-field>
 							</v-col>
 
 							<v-col cols="12">
-								<v-text-field required :rules="emailRules" v-model="email" type="email" flat label="Email*" outlined color="primary"></v-text-field>
+								<v-text-field required :rules="emailRules" v-model="email" type="email" flat :label="$t('contact.email')" outlined color="primary"></v-text-field>
 							</v-col>
 
 							<v-col cols="12">
-								<v-text-field required :rules="subjectRules" v-model="subject" flat label="Subject*" outlined color="primary"></v-text-field>
+								<v-text-field required :rules="subjectRules" v-model="subject" flat :label="$t('contact.subject')" outlined color="primary"></v-text-field>
 							</v-col>
 
 							<v-col cols="12">
-								<v-textarea required :rules="messageRules" v-model="message" flat label="Message*" outlined color="primary"></v-textarea>
+								<v-textarea required :rules="messageRules" v-model="message" flat :label="$t('contact.message')" outlined color="primary"></v-textarea>
 							</v-col>
 
 							<v-col class="mx-auto" cols="auto">
-								<v-btn :disabled="!valid" color="primary" x-large @click="sendForm">Submit</v-btn>
+								<v-btn :disabled="!valid" color="primary" x-large @click="sendForm">{{ $t('contact.submit') }}</v-btn>
 							</v-col>
 						</v-row>
 					</v-form>
@@ -46,7 +46,7 @@
 	import axios from 'axios';
 	export default {
 		name: 'Contact',
-		data: () => ({
+		data: vm => ({
 			name:null,
 			email:null,
 			subject:null,
@@ -59,20 +59,20 @@
 			snackbarText:'Email sent successfully !',
 
 			nameRules: [
-				v => !!v || 'Name is required',
-				v => (v && v.length >= 3) || 'Name must be more than 3 characters',
+				v => !!v || vm.$i18n.t('contact.name-required'),
+				v => (v && v.length > 3) || vm.$i18n.t('contact.name-length'),
 			],
 			emailRules: [
-				v => !!v || 'E-mail is required',
-				v => /.+@.+\..+/.test(v) || 'E-mail must be valid',
+				v => !!v || vm.$i18n.t('contact.email-required'),
+				v => /.+@.+\..+/.test(v) || vm.$i18n.t('contact.email-must-be-valid'),
 			],
 			subjectRules: [
-				v => !!v || 'Subject is required',
-				v => (v && v.length >= 3) || 'Subject must be more than 3 characters',
+				v => !!v || vm.$i18n.t('contact.subject-required'),
+				v => (v && v.length > 3) || vm.$i18n.t('contact.subject-length'),
 			],
 			messageRules: [
-				v => !!v || 'Message is required',
-				v => (v && v.length >= 5) || 'Message must be more than 5 characters',
+				v => !!v || vm.$i18n.t('contact.message-required'),
+				v => (v && v.length > 3) || vm.$i18n.t('contact.message-length'),
 			],
 
 		}),
@@ -112,10 +112,10 @@
 			toggleSnackbar(success){
 				if (success){
 					this.snackbarColor = 'success';
-					this.snackbarText = 'Email sent successfully !';
+					this.snackbarText = this.$i18n.t('contact.email-success');
 				} else {
 					this.snackbarColor = 'error';
-					this.snackbarText = 'An error occurred while sending mail';
+					this.snackbarText = this.$i18n.t('contact.email-error');
 				}
 				this.snackbar = true
 			}

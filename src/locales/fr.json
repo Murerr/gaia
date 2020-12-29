@@ -17,5 +17,27 @@
     "my-portfolio": "Mon Portfolio",
     "know-more":"Vous souhaitez en savoir plus sur moi ou mon parcours ?",
     "about-me":"À propos de moi"
+  },
+  "porfolio": {
+    "title": "MON PORTFOLIO",
+    "forked-projects": "Projets Fork"
+  },
+  "contact": {
+    "title": "Me contacter",
+    "name": "Nom*",
+    "email": "E-mail*",
+    "subject": "Objet de l'e-mail*",
+    "message": "Message*",
+    "submit": "Envoyer",
+    "name-required":"Un nom est requis",
+    "name-length":"Un nom doit comporter plus de 3 lettres",
+    "email-required":"Un e-mail est requis",
+    "email-must-be-valid":"L'email doit être valide",
+    "subject-required":"Un objet d'email est requis",
+    "subject-length":"Un objet d'email doit comporter plus de 3 lettres",
+    "message-required":"Un message est requis",
+    "message-length":"Un message doit comporter plus de 3 lettres",
+    "email-success":"E-mail envoyé avec succès !",
+    "email-error":"Un problème est survenu lors de l'envoi d'e-mail"
   }
 }

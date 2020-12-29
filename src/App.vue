@@ -12,7 +12,7 @@
 						<v-icon>mdi-home</v-icon>
 					</v-list-item-action>
 					<v-list-item-content >
-						<v-list-item-title>Home</v-list-item-title>
+						<v-list-item-title>{{ $t('app.home') }}</v-list-item-title>
 					</v-list-item-content>
 				</v-list-item>
 
@@ -21,7 +21,7 @@
 						<v-icon>mdi-wallet</v-icon>
 					</v-list-item-action>
 					<v-list-item-content >
-						<v-list-item-title>Portfolio</v-list-item-title>
+						<v-list-item-title>{{ $t('app.portfolio') }}</v-list-item-title>
 					</v-list-item-content>
 				</v-list-item>
 
@@ -30,7 +30,7 @@
 						<v-icon>mdi-email</v-icon>
 					</v-list-item-action>
 					<v-list-item-content >
-						<v-list-item-title>Contact</v-list-item-title>
+						<v-list-item-title>{{ $t('app.contact') }}</v-list-item-title>
 					</v-list-item-content>
 				</v-list-item>
 				<v-list-item link :to="{path: '/about' }">
@@ -38,14 +38,14 @@
 						<v-icon>mdi-information</v-icon>
 					</v-list-item-action>
 					<v-list-item-content >
-						<v-list-item-title>About</v-list-item-title>
+						<v-list-item-title>{{ $t('app.about') }}</v-list-item-title>
 					</v-list-item-content>
 				</v-list-item>
 				<v-spacer></v-spacer>
 					<v-container align="center" justify="center">
 						<v-row justify="center">
-							<a v-if="is_lang_english" class="pa-2 text-decoration-none" target="_blank" ><v-img max-height="40" max-width="40" src="./assets/united-kingdom.svg"></v-img></a>
-							<a v-else class="pa-2 text-decoration-none" target="_blank" ><v-img max-height="40" max-width="40" src="./assets/france.svg"></v-img></a>
+							<a @click="updateLang('en')" v-if="is_lang_french" class="pa-2 text-decoration-none navbar-image-link" target="_blank" ><v-img max-height="40" max-width="40" src="./assets/united-kingdom.svg"></v-img></a>
+							<a @click="updateLang('fr')" v-else class="pa-2 text-decoration-none navbar-image-link" target="_blank" ><v-img max-height="40" max-width="40" src="./assets/france.svg"></v-img></a>
 							<a class="pa-2 text-decoration-none" href="https://github.com/Murerr" target="_blank" ><v-icon size="40">mdi-github</v-icon></a>
 							<a class="pa-2 text-decoration-none" href="https://www.linkedin.com/in/murerr/" target="_blank" ><v-icon size="40">mdi-linkedin</v-icon></a>
 						</v-row>
@@ -54,10 +54,10 @@
 		</v-navigation-drawer>
 		<v-app-bar app color="primary" dark>
 			<v-container class="hidden-xs-only white--text" fluid>
-				<router-link :to="{path: '/' }"><v-btn text class="white--text">{{ $t('navbar.home') }}</v-btn></router-link>
-				<router-link :to="{path: '/portfolio' }"><v-btn text class="white--text">{{ $t('navbar.portfolio') }}</v-btn></router-link>
-				<router-link :to="{path: '/contact' }"><v-btn text class="white--text">{{ $t('navbar.contact') }}</v-btn></router-link>
-				<router-link :to="{path: '/about' }"><v-btn text class="white--text">{{ $t('navbar.about') }}</v-btn></router-link>
+				<router-link :to="{path: '/' }"><v-btn text class="white--text">{{ $t('app.home') }}</v-btn></router-link>
+				<router-link :to="{path: '/portfolio' }"><v-btn text class="white--text">{{ $t('app.portfolio') }}</v-btn></router-link>
+				<router-link :to="{path: '/contact' }"><v-btn text class="white--text">{{ $t('app.contact') }}</v-btn></router-link>
+				<router-link :to="{path: '/about' }"><v-btn text class="white--text">{{ $t('app.about') }}</v-btn></router-link>
 			</v-container>
 			<v-spacer></v-spacer>
       <a @click="updateLang('en')" v-if="is_lang_french" class="hidden-xs-only" ><v-btn icon><v-img max-height="24" max-width="24" src="./assets/united-kingdom.svg"></v-img></v-btn></a>
@@ -70,15 +70,24 @@
 		<v-main class="pa-0">
 			<router-view></router-view>
 		</v-main>
-		<v-footer class="justify-center" color="primary" height="100">
+		<v-footer class="justify-center mt-2" color="primary">
+      <div class=" title font-weight-light white--text text--lighten-1 text-center">
+        {{ $t('app.available') }}
+      </div>
+      <v-container align="center" justify="center" class="pa-0">
+        <v-row justify="center">
+          <a @click="updateLang('en')" v-if="is_lang_french" class="text-decoration-none" target="_blank" ><v-img max-height="32" max-width="32" src="./assets/united-kingdom.svg"></v-img></a>
+          <a @click="updateLang('fr')" v-else class="text-decoration-none" target="_blank" ><v-img max-height="32" max-width="32" src="./assets/france.svg"></v-img></a>
+        </v-row>
+      </v-container>
 			<div class="title font-weight-light white--text text--lighten-1 text-center">
-				&copy; {{ (new Date()).getFullYear() }} Made by Rudy Murer
+				&copy; {{ (new Date()).getFullYear() }}  {{ $t('app.madeby') }}
 			</div>
 		</v-footer>
 	</v-app>
 </template>
 <style scoped>
-.v-application a {
+.navbar-image-link{
   color: transparent;
 }
 </style>

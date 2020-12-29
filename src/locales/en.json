@@ -2,10 +2,12 @@
   "home": {
     "software-developer": "Software Developer"
   },
-  "navbar": {
+  "app": {
     "home": "Home",
     "portfolio": "Portfolio",
     "contact": "Contact",
-    "about": "About"
+    "about": "About",
+    "available": "Ce site web est aussi disponible en:",
+    "madeby": "Made by Rudy Murer"
   }
 }

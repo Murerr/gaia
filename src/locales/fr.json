@@ -2,10 +2,15 @@
   "home": {
     "software-developer": "Développeur Informatique"
   },
-  "navbar": {
+  "app": {
     "home": "Accueil",
     "portfolio": "Portfolio",
     "contact": "Contact",
-    "about": "à Propos"
+    "about": "À propos",
+    "available": "This website is also available in:",
+    "madeby": "Créé par Rudy Murer"
+  },
+  "home":{
+
   }
 }

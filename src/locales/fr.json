@@ -1,7 +1,5 @@
 {
-  "home": {
-    "software-developer": "Développeur Informatique"
-  },
+
   "app": {
     "home": "Accueil",
     "portfolio": "Portfolio",
@@ -10,7 +8,14 @@
     "available": "This website is also available in:",
     "madeby": "Créé par Rudy Murer"
   },
-  "home":{
-
+  "home": {
+    "software-developer": "Développeur Informatique",
+    "introduction": "Salut ! Moi c'est Rudy",
+    "greetings": "Bienvenue sur mon site web !",
+    "whoami": "Français de 23 ans, je suis diplômé d'une licence professionnelle en informatique. Je travaille en Irlande depuis déjà plus de 2 ans. J'ai toujours été passionné par les nouvelles technologies, et plus particulièrement les technologies web et mobile. Plus récemment, je me suis intéressé au développement d'intelligence artificiel dans les jeux de sociétés.",
+    "have-a-look": "Vous pouvez jeter un œil sur les projets que j'ai réalisés ici ! ",
+    "my-portfolio": "Mon Portfolio",
+    "know-more":"Vous souhaitez en savoir plus sur moi ou mon parcours ?",
+    "about-me":"À propos de moi"
   }
 }

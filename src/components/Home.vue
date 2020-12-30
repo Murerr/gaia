@@ -32,20 +32,21 @@
             {{ $t('home.greetings') }}
 					</v-responsive>
 					<v-responsive class="mx-auto title font-weight-light text-justify" max-width="720">
-            {{ $t('home.whoami') }}<br><br>
+            {{ $t('home.whoami') }}
 					</v-responsive>
-					<v-responsive class="mx-auto title font-weight-light mb-8 text-center" max-width="720">
+					<v-responsive class="mx-auto title font-weight-light pt-4 pb-4 text-center" max-width="720">
             {{ $t('home.have-a-look') }}
 					</v-responsive>
 					<router-link class="porfolio-router-link pb-8" :to="{path: '/portfolio' }">
-					<v-btn color="primary" outlined large>
-						<span class="primary--text font-weight-bold">
-							{{ $t('home.my-portfolio') }}
-						</span>
-					</v-btn>
+            <v-btn color="primary" outlined large>
+              <span class="primary--text font-weight-bold">
+                {{ $t('home.my-portfolio') }}
+              </span>
+            </v-btn>
 					</router-link>
-					<v-responsive class="mx-auto title font-weight-light mt-8 text-center" max-width="720">
-            {{ $t('home.know-more') }} <br><br>
+
+					<v-responsive class="mx-auto title font-weight-light  pt-4 pb-4 text-center" max-width="720">
+            {{ $t('home.know-more') }}
 					</v-responsive>
 
 					<router-link class="porfolio-router-link" :to="{path: '/about' }">

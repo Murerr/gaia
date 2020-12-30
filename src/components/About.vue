@@ -1,9 +1,9 @@
 <template>
 	<v-main>
 		<section id="about-me">
-			<div class="py-12"></div>
+			<div class="py-6"></div>
 			<v-container class="text-center">
-				<h2 class="display-2 font-weight-bold mb-3 text-uppercase">About Me</h2>
+				<h2 class="display-2 font-weight-bold mb-3 text-uppercase">{{ $t('about.title') }}</h2>
 
 				<v-responsive class="mx-auto mb-8" width="56">
 					<v-divider class="mb-1"></v-divider>
@@ -15,18 +15,17 @@
 				</v-avatar>
 
 				<v-responsive class="mx-auto title font-weight-light mb-8 text-center" max-width="720">
-					In this section you will find more about me, my education and the projects I have worked on so far !
-
-				</v-responsive>
+          {{ $t('about.description') }}
+        </v-responsive>
 				<a @click.prevent="downloadCV()"><v-btn color="primary" outlined large>
 						<span class="primary--text font-weight-bold">
-							Download My CV
+              {{ $t('about.download') }}
 						</span>
 				</v-btn></a>
 
-				<v-timeline align-top :dense="$vuetify.breakpoint.smAndDown">
+				<v-timeline id="timeline" align-top :dense="$vuetify.breakpoint.smAndDown">
 					<v-timeline-item
-							v-for="(item, i) in items"
+							v-for="(item, i) in $t('about.items')"
 							:key="i"
 							:color="item.color"
 							:icon="item.icon"
@@ -35,7 +34,8 @@
 							<v-card-title class="title">{{item.title}}</v-card-title>
 							<v-card-subtitle class="subtitle-1 text-left ">{{item.location}}</v-card-subtitle>
 							<v-card-text class="white text--secondary justify-center">
-								<ul class="text-center font-weight-medium pt-2"> {{item.text}}
+                <ul class="text-center font-weight-medium pt-2 pb-2">{{item.text}}</ul>
+								<ul>
 									<li class="text-left font-weight-regular" v-for="(item, index) in item.list" :key="index" > {{item}}</li>
 								</ul>
 								<a v-if="item.github" class="text-decoration-none" :href="item.github" target="_blank" ><v-btn color="primary" icon><v-icon>mdi-github</v-icon></v-btn></a>
@@ -53,7 +53,12 @@
 		</section>
 	</v-main>
 </template>
-
+<style scoped>
+#timeline{
+  max-width: 1201px;
+  margin: 0 auto;
+}
+</style>
 <script>
 	import axios from 'axios';
 	export default {
@@ -72,8 +77,7 @@
 					}).catch(console.error)
 			}
 		},
-		data: () => ({
-
+		data: vm => ({
 			publicPath: process.env.BASE_URL,
 			items: [
 				{
@@ -82,7 +86,7 @@
 					github: '',
 					youtube: '',
 					title:'Fullstack Software Developer',
-					location:'ASA Marketing, Cork, Ireland',
+					location:'ASA Marketing, Cork, ' + vm.$i18n.t('about.ireland') ,
 					list: ['Facilitated and hosted a Web application using Firebase.',
 						'Implemented a realtime fleet tracking system with Google Maps.',
 						'Designed and developed a UI to filter and sort artworks.',
@@ -97,7 +101,7 @@
 					github: 'https://github.com/Murerr/CIT_transportAI',
 					youtube: '',
 					title:'Final Year Project : Transport AI',
-					location:'Cork Institute Of Technology, Cork, Ireland',
+					location:'Cork Institute Of Technology, Cork, ' + vm.$i18n.t('about.ireland'),
 					list:['Developed a mobile application to book the nearest self-driving car.',
 						'The data was stored and retrieved using Firebase.',
 						'Google Maps API was used to display user location.'
@@ -110,7 +114,7 @@
 					github: '',
 					youtube: '',
 					title:'BSc in Software Development',
-					location:'Cork Institute Of Technology, Cork, Ireland',
+					location:'Cork Institute Of Technology, Cork, ' + vm.$i18n.t('about.ireland'),
 					text:'1 Year Erasmus program, Core Modules:',
 					list:[ ' Programming Mobile Device & Object Oriented Programming',
 						'Server-side Web Development & Agile Processes',
@@ -186,7 +190,7 @@
 					youtube: '',
 					title:'Baccalauréat STI2D SIN',
 					location:'Lycée Des Catalins, Montélimar, France',
-					text:'Leaving Certificat with special emphasis on Programming & Engineering.',
+          text: "Leaving Certificat with special emphasis on Programming & Engineering.",
 					list:[
 						'C & Embedded programming',
 						'Arduino & Mechanical Engineering'
@@ -196,5 +200,5 @@
 				}
 			],
 		}),
-	}
+  }
 </script>

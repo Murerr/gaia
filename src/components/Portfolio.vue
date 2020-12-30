@@ -1,9 +1,9 @@
 <template>
 	<v-main>
 		<section id="portfolio">
-			<div class="py-12"></div>
+			<div class="py-6"></div>
 			<v-container class="text-center">
-				<h2 class="display-2 font-weight-bold mb-3 text-uppercase">My Portfolio</h2>
+				<h2 class="display-2 font-weight-bold mb-3 text-uppercase">{{ $t('porfolio.title') }}</h2>
 			</v-container>
 			<v-responsive class="mx-auto mb-8" width="56">
 				<v-divider class="mb-1"></v-divider>
@@ -20,7 +20,7 @@
 			</v-container>
 
 			<v-container v-if="loading" class="text-center">
-				<h2 class="display-1 font-weight-medium mb-3 text--secondary" >Forked Projects</h2>
+				<h2 class="display-1 font-weight-medium mb-3 text--secondary">{{ $t('porfolio.forked-projects') }}</h2>
 			</v-container>
 
 			<v-responsive class="mx-auto mb-8" width="56">
@@ -68,11 +68,7 @@
 				this.projects.sort((a, b) => { return new Date(b.created_at) - new Date(a.created_at) });
 				this.forked_projects = this.projects.filter(project => project.fork === true);
 				this.forked_projects.forEach(fork => this.projects.splice(this.projects.findIndex(project => project.id === fork.id),1));
-
-				console.log(this.projects);
-				console.log(this.forked_projects);
 				this.loading = true
-
 			});
 		}
 	}

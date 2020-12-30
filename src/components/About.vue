@@ -23,9 +23,9 @@
 						</span>
 				</v-btn></a>
 
-				<v-timeline align-top :dense="$vuetify.breakpoint.smAndDown">
+				<v-timeline id="timeline" align-top :dense="$vuetify.breakpoint.smAndDown">
 					<v-timeline-item
-							v-for="(item, i) in items"
+							v-for="(item, i) in $t('about.items')"
 							:key="i"
 							:color="item.color"
 							:icon="item.icon"
@@ -34,7 +34,8 @@
 							<v-card-title class="title">{{item.title}}</v-card-title>
 							<v-card-subtitle class="subtitle-1 text-left ">{{item.location}}</v-card-subtitle>
 							<v-card-text class="white text--secondary justify-center">
-								<ul class="text-center font-weight-medium pt-2"> {{item.text}}
+                <ul class="text-center font-weight-medium pt-2 pb-2">{{item.text}}</ul>
+								<ul>
 									<li class="text-left font-weight-regular" v-for="(item, index) in item.list" :key="index" > {{item}}</li>
 								</ul>
 								<a v-if="item.github" class="text-decoration-none" :href="item.github" target="_blank" ><v-btn color="primary" icon><v-icon>mdi-github</v-icon></v-btn></a>
@@ -52,7 +53,12 @@
 		</section>
 	</v-main>
 </template>
-
+<style scoped>
+#timeline{
+  max-width: 1201px;
+  margin: 0 auto;
+}
+</style>
 <script>
 	import axios from 'axios';
 	export default {
@@ -184,7 +190,7 @@
 					youtube: '',
 					title:'Baccalauréat STI2D SIN',
 					location:'Lycée Des Catalins, Montélimar, France',
-					text: vm.$i18n.t('about.bac.text'),
+          text: "Leaving Certificat with special emphasis on Programming & Engineering.",
 					list:[
 						'C & Embedded programming',
 						'Arduino & Mechanical Engineering'

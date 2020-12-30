@@ -1,9 +1,9 @@
 <template>
 	<v-main>
 		<section id="about-me">
-			<div class="py-12"></div>
+			<div class="py-6"></div>
 			<v-container class="text-center">
-				<h2 class="display-2 font-weight-bold mb-3 text-uppercase">About Me</h2>
+				<h2 class="display-2 font-weight-bold mb-3 text-uppercase">{{ $t('about.title') }}</h2>
 
 				<v-responsive class="mx-auto mb-8" width="56">
 					<v-divider class="mb-1"></v-divider>
@@ -15,12 +15,11 @@
 				</v-avatar>
 
 				<v-responsive class="mx-auto title font-weight-light mb-8 text-center" max-width="720">
-					In this section you will find more about me, my education and the projects I have worked on so far !
-
-				</v-responsive>
+          {{ $t('about.description') }}
+        </v-responsive>
 				<a @click.prevent="downloadCV()"><v-btn color="primary" outlined large>
 						<span class="primary--text font-weight-bold">
-							Download My CV
+              {{ $t('about.download') }}
 						</span>
 				</v-btn></a>
 
@@ -72,8 +71,7 @@
 					}).catch(console.error)
 			}
 		},
-		data: () => ({
-
+		data: vm => ({
 			publicPath: process.env.BASE_URL,
 			items: [
 				{
@@ -82,7 +80,7 @@
 					github: '',
 					youtube: '',
 					title:'Fullstack Software Developer',
-					location:'ASA Marketing, Cork, Ireland',
+					location:'ASA Marketing, Cork, ' + vm.$i18n.t('about.ireland') ,
 					list: ['Facilitated and hosted a Web application using Firebase.',
 						'Implemented a realtime fleet tracking system with Google Maps.',
 						'Designed and developed a UI to filter and sort artworks.',
@@ -97,7 +95,7 @@
 					github: 'https://github.com/Murerr/CIT_transportAI',
 					youtube: '',
 					title:'Final Year Project : Transport AI',
-					location:'Cork Institute Of Technology, Cork, Ireland',
+					location:'Cork Institute Of Technology, Cork, ' + vm.$i18n.t('about.ireland'),
 					list:['Developed a mobile application to book the nearest self-driving car.',
 						'The data was stored and retrieved using Firebase.',
 						'Google Maps API was used to display user location.'
@@ -110,7 +108,7 @@
 					github: '',
 					youtube: '',
 					title:'BSc in Software Development',
-					location:'Cork Institute Of Technology, Cork, Ireland',
+					location:'Cork Institute Of Technology, Cork, ' + vm.$i18n.t('about.ireland'),
 					text:'1 Year Erasmus program, Core Modules:',
 					list:[ ' Programming Mobile Device & Object Oriented Programming',
 						'Server-side Web Development & Agile Processes',
@@ -186,7 +184,7 @@
 					youtube: '',
 					title:'Baccalauréat STI2D SIN',
 					location:'Lycée Des Catalins, Montélimar, France',
-					text:'Leaving Certificat with special emphasis on Programming & Engineering.',
+					text: vm.$i18n.t('about.bac.text'),
 					list:[
 						'C & Embedded programming',
 						'Arduino & Mechanical Engineering'
@@ -196,5 +194,5 @@
 				}
 			],
 		}),
-	}
+  }
 </script>

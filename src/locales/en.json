@@ -39,5 +39,19 @@
     "message-length":"Message must be more than 3 characters",
     "email-success":"Email sent successfully!",
     "email-error":"An error occurred while sending the email"
+  },
+  "about": {
+    "title": "About me",
+    "description": "In this section you will find more about me, my education and the projects I have worked on so far!",
+    "download": "Download my CV",
+    "ireland": "Ireland",
+    "bac": {
+      "title": "",
+      "text": "Leaving Certificat with special emphasis on Programming & Engineering.",
+      "list": [
+        "C & Embedded programming en francais.",
+        "Arduino & Mechanical Engineering."
+      ]
+    }
   }
 }

@@ -51,12 +51,12 @@
         "icon": "mdi-buffer",
         "github": "",
         "youtube": "",
-        "title": "Développeur de logiciel full stack",
+        "title": "Développeur de logiciel Full Stack",
         "location": "ASA Marketing, Cork, Irlande",
         "list": [
           "Conception et hébergement d'applications web avec Firebase",
           "Implementation d'un système de localisation de voiture avec Google Maps",
-          "Réalisation d'une interface utilisateur pour filter et trier des images",
+          "Réalisation d'une interface utilisateur pour filtrer et trier des images",
           "J'ai appris à prioriser mes missions en utilisant un système de tickets"
         ],
         "year":"2019-Maintenant"
@@ -67,12 +67,12 @@
         "icon": "mdi-android",
         "github": "https://github.com/Murerr/CIT_transportAI",
         "youtube": "",
-        "title":"Projet de fin d'année: Transport AI",
+        "title":"Projet de fin d'année: Transport IA",
         "location":"Cork Institute Of Technology, Cork, Irlande",
         "list":[
           "Création d’une application mobile pour réserver la voiture la plus proche",
-          "Les donnes étaient stockées et récupérées avec Firebase",
-          "L’API Google Maps a été utilisé pour afficher la position de l’utilisateur"
+          "Les données étaient stockées et récupérées avec Firebase",
+          "L’API Google Maps a été utilisée pour afficher la position de l’utilisateur"
         ],
         "year":"2019"
       },
@@ -97,7 +97,7 @@
         "icon" : "mdi-android",
         "github" : "",
         "youtube" : "https://youtu.be/b1QzD9aA2Ec",
-        "title" :"Stage Android en fin d'année de DUT",
+        "title" :"Stage Android de fin d'année de DUT",
         "location" :"Cansii, Châteauneuf-sur-Isère, France",
         "text" :"Un stage Kotlin d'une durée de 3 mois",
         "list" :[
@@ -114,11 +114,11 @@
         "icon": "mdi-printer-wireless",
         "github": "",
         "youtube": "https://youtu.be/Mo2wg_2_93U",
-        "title":"Projet de fin d'année: l'application web Reprographie",
+        "title":"Projet de fin d'année: l'application Web Reprographie",
         "location":"Université Grenoble Alpes, Valence, France",
         "text":"",
         "list":[
-          "Mise en place d'une application web qui gère les demandes de photocopies",
+          "Mise en place d'une application Web qui gère les demandes de photocopies",
           "Le projet a été réalisé avec le Framework Symfony (PHP) ",
           "J’ai appris l’importance du modèle vue contrôleur "
         ],
@@ -129,11 +129,11 @@
         "icon": "mdi-chart-timeline",
         "github": "",
         "youtube": "",
-        "title":"Stage PHP en fin d'année de DUT",
+        "title":"Stage PHP de fin d'année de DUT",
         "location":"8 Fablab, Crest, France",
         "text":"Un stage PHP d'une durée de 3 mois",
         "list":[
-          "Création d’une IHM  pour réserver une session d’entrainement ",
+          "Création d’une IHM  pour réserver une session d’entraînement ",
           "Réalisation d’un panneau d’administration pour gérer les réservations avec Dolibarr",
           "Facturation des clients avec l'API Stripe"
         ],

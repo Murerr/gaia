@@ -44,10 +44,10 @@
 				<v-spacer></v-spacer>
 					<v-container align="center" justify="center">
 						<v-row justify="center">
-							<a @click="updateLang('en')" v-if="is_lang_french" class="pa-2 text-decoration-none navbar-image-link" target="_blank" ><v-img max-height="40" max-width="40" src="./assets/united-kingdom.svg"></v-img></a>
-							<a @click="updateLang('fr')" v-else class="pa-2 text-decoration-none navbar-image-link" target="_blank" ><v-img max-height="40" max-width="40" src="./assets/france.svg"></v-img></a>
 							<a class="pa-2 text-decoration-none" href="https://github.com/Murerr" target="_blank" ><v-icon size="40">mdi-github</v-icon></a>
 							<a class="pa-2 text-decoration-none" href="https://www.linkedin.com/in/murerr/" target="_blank" ><v-icon size="40">mdi-linkedin</v-icon></a>
+							<a @click="updateLang('en')" v-if="is_lang_french" class="pa-2 text-decoration-none navbar-image-link" target="_blank" ><v-img min-height="40" min-width="40" src="./assets/united-kingdom.svg"></v-img></a>
+							<a @click="updateLang('fr')" v-else class="pa-2 text-decoration-none navbar-image-link" target="_blank" ><v-img min-height="40" min-width="40" src="./assets/france.svg"></v-img></a>
 						</v-row>
 					</v-container>
 			</v-list>
@@ -60,10 +60,10 @@
 				<router-link :to="{path: '/about' }"><v-btn text class="white--text">{{ $t('app.about') }}</v-btn></router-link>
 			</v-container>
 			<v-spacer></v-spacer>
-      <a @click="updateLang('en')" v-if="is_lang_french" class="hidden-xs-only" ><v-btn icon><v-img max-height="24" max-width="24" src="./assets/united-kingdom.svg"></v-img></v-btn></a>
-      <a @click="updateLang('fr')" v-else class="hidden-xs-only color" ><v-btn icon><v-img max-height="24" max-width="24" src="./assets/france.svg"></v-img></v-btn></a>
 			<a class="hidden-xs-only" href="https://github.com/Murerr" target="_blank" ><v-btn icon><v-icon>mdi-github</v-icon></v-btn></a>
-			<a class="hidden-xs-only" href="https://www.linkedin.com/in/murerr/" target="_blank" ><v-btn icon><v-icon>mdi-linkedin</v-icon></v-btn></a>
+			<a class="hidden-xs-only pr-3" href="https://www.linkedin.com/in/murerr/" target="_blank" ><v-btn icon><v-icon>mdi-linkedin</v-icon></v-btn></a>
+      <a @click="updateLang('en')" v-if="is_lang_french" class="hidden-xs-only" ><v-btn icon><v-img height="48" width="32" src="./assets/united-kingdom.svg"></v-img></v-btn></a>
+      <a @click="updateLang('fr')" v-else class="hidden-xs-only" ><v-btn icon><v-img height="48" width="32" src="./assets/france.svg"></v-img></v-btn></a>
 			<v-app-bar-nav-icon class="hidden-sm-and-up" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
 		</v-app-bar>
 
@@ -76,8 +76,8 @@
       </div>
       <v-container class="pa-0" >
         <v-row align="center" justify="center">
-          <a @click="updateLang('en')" v-if="is_lang_french" class="text-decoration-none" target="_blank" ><v-img max-height="32" max-width="32" src="./assets/united-kingdom.svg"></v-img></a>
-          <a @click="updateLang('fr')" v-else class="text-decoration-none" target="_blank" ><v-img max-height="32" max-width="32" src="./assets/france.svg"></v-img></a>
+          <a @click="updateLang('en')" v-if="is_lang_french" class="text-decoration-none" target="_blank" ><v-img height="32" width="32" src="./assets/united-kingdom.svg"></v-img></a>
+          <a @click="updateLang('fr')" v-else class="text-decoration-none" target="_blank" ><v-img height="32" width="32" src="./assets/france.svg"></v-img></a>
         </v-row>
       </v-container>
 			<div class="title font-weight-light white--text text--lighten-1">
@@ -114,12 +114,17 @@
 				}
 			},
       is_lang_french() {
-        return /^fr\b/.test(navigator.language) || this.$root.$i18n.locale === 'fr';
+        return this.$root.$i18n.locale === 'fr'
       }
 		},
     methods:{
       updateLang(lang){
         this.$root.$i18n.locale = lang;
+      }
+    },
+    created() {
+      if (/^fr\b/.test(navigator.language)){
+        this.updateLang('fr');
       }
     },
 		data: () => ({

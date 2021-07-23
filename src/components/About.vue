@@ -65,20 +65,17 @@
 		name: 'About',
 		methods: {
 			downloadCV() {
-				let url = this.is_lang_french() ? 'Rudy_Murer_CV_FRENCH.pdf' :'Rudy_Murer_CV_ENGLISH.pdf';
+				let url = this.$root.$i18n.locale === 'fr' ? 'Rudy_Murer_CV_FRENCH.pdf' :'Rudy_Murer_CV_ENGLISH.pdf';
 				axios.get(this.publicPath + url , {responseType: 'blob'})
 					.then(response => {
 						const blob = new Blob([response.data], {type: 'application/pdf'});
 						const link = document.createElement('a');
 						link.href = URL.createObjectURL(blob);
-						link.download = url; // Filename
+						link.download = url;
 						link.click();
 						URL.revokeObjectURL(link.href)
 					}).catch(console.error)
 			},
-      is_lang_french() {
-        return /^fr\b/.test(navigator.language) || this.$root.$i18n.locale === 'fr';
-      }
 		},
 		data: () => ({
 			publicPath: process.env.BASE_URL

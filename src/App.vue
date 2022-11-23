@@ -46,8 +46,8 @@
 						<v-row justify="center">
 							<a class="pa-2 text-decoration-none" href="https://github.com/Murerr" target="_blank" ><v-icon size="40">mdi-github</v-icon></a>
 							<a class="pa-2 text-decoration-none" href="https://www.linkedin.com/in/murerr/" target="_blank" ><v-icon size="40">mdi-linkedin</v-icon></a>
-							<a @click="updateLang('en')" v-if="is_lang_french" class="pa-2 text-decoration-none navbar-image-link" target="_blank" ><v-img min-height="40" min-width="40" src="./assets/united-kingdom.svg"></v-img></a>
-							<a @click="updateLang('fr')" v-else class="pa-2 text-decoration-none navbar-image-link" target="_blank" ><v-img min-height="40" min-width="40" src="./assets/france.svg"></v-img></a>
+							<a @click="updateLang('en')" v-if="is_lang_french" class="pa-2 text-decoration-none navbar-image-link" target="_blank" ><v-img height="48" width="32" src="./assets/united-kingdom.svg"></v-img></a>
+							<a @click="updateLang('fr')" v-else class="pa-2 text-decoration-none navbar-image-link" target="_blank" ><v-img height="48" width="32" src="./assets/france.svg"></v-img></a>
 						</v-row>
 					</v-container>
 			</v-list>
